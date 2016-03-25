@@ -93,6 +93,7 @@ class GoogleLogin extends Component {
           onClick={this.onBtnClick.bind(this)}
           style={cssClass ? {} : style}
         >
+        <span className={'fa fa-google'}></span>
           {buttonText}
         </button>
     </div>
