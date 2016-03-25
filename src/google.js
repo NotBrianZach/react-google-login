@@ -37,7 +37,7 @@ class GoogleLogin extends Component {
       const params = {
         client_id: this.props.clientId,
         cookiepolicy: this.props.cookiePolicy
-      }
+      };
       window.gapi.load('auth2', () => {
         gapi.auth2.init(params);
       });
@@ -53,15 +53,15 @@ class GoogleLogin extends Component {
       let options = {
         'scope': scope,
         'redirect_uri': redirectUri
-      }
+      };
       auth2.grantOfflineAccess(options)
         .then((data) => {
-          callback(data)
+          callback(data);
         });
     } else {
       let options = {
         'scope': scope
-      }
+      };
       auth2.signIn(options)
         .then((response) => {
           callback(response);
@@ -82,16 +82,16 @@ class GoogleLogin extends Component {
       fontSize: 16,
       fontWeight: 'bold',
       fontFamily: 'Roboto'
-    }
+    };
     const {
       cssClass, buttonText
     } = this.props;
     return (
       <div>
-        <button 
-          className={cssClass} 
+        <button
+          className={cssClass}
           onClick={this.onBtnClick.bind(this)}
-          style={cssClass ? {} : style} 
+          style={cssClass ? {} : style}
         >
           {buttonText}
         </button>
